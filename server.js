@@ -18,6 +18,7 @@ app.get('/posts',(req,res)=>{
 app.post('/add',(req,res)=>{
     const data=req.body
     blog_posts.push(data)
+    res.render("index.ejs")
 })
 
 app.listen(PORT,()=>{
