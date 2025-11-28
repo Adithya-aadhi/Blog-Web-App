@@ -39,14 +39,16 @@
 <body>
     <%- include('header.ejs') %>
     <div class="container">
-        <% blog_posts.forEach(element => { %>
+        <% blog_posts.forEach((element,index) => { %>
             <div class="post-container">
                 <h2><%= element.name%></h2>
                 <h2><%= element.email%></h2>
                 <h2><%= element.date%></h2>
                 <h2><%= element.description%></h2>
+                <a href="/delete/<%= index %>">Delete</a>
             </div>
        <% }); %>
+       
     </div>
 </body>
 </html>

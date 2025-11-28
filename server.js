@@ -20,6 +20,13 @@ app.post('/add',(req,res)=>{
     blog_posts.push(data)
     res.render("index.ejs")
 })
+app.get('/delete/:index', (req, res) => {
+    const index = req.params.index;
+    if (blog_posts[index]) {
+        blog_posts.splice(index, 1);
+    }
+    res.redirect('/posts');
+});
 
 app.listen(PORT,()=>{
     console.log(`listening on port ${PORT}`)
